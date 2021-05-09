@@ -5,13 +5,19 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
+#Non Standard Installations (Pls remember cleanup)
 git clone git@github-dev:ryanoasis/nerd-fonts.git
 ./nerd-fonts/install.sh Hack
+rm -rf nerd-fonts/
+
+wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
+sudo dpkg -i bat_0.11.0_amd64.deb lsd_0.20.1_amd64.deb
+rm bat_0.11.0_amd64.deb lsd_0.20.1_amd64.deb
+
+#Apt Installations
 sudo apt-get install ctags
 sudo apt install tmux
-#sudo apt install bat
-wget https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
-sudo dpkg -i bat_0.11.0_amd64.deb
 sudo apt-get install fzf
 sudo apt-get install ripgrep
 sudo apt-get install fonts-powerline
@@ -26,6 +32,7 @@ sudo pip3 install powerline-status
 npm i -g neovim
 
 
+cp .bash_aliases ~/
 cp alacritty.yml ~/
 cp .vimrc ~/
 cp .vimrc .nvimrc
