@@ -34,8 +34,6 @@ npm i -g neovim
 
 cp .bash_aliases ~/
 cp alacritty.yml ~/
-cp .vimrc ~/
-cp .vimrc .nvimrc
 cp .nvimrc ~/
 
 mkdir -p ~/.config/nvim
