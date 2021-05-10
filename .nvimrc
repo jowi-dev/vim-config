@@ -102,4 +102,5 @@ endif
  let g:airline_symbols.readonly = ''
  let g:airline_symbols.linenr = ''
 
-
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
