@@ -1,4 +1,9 @@
 #This config requires node, python2, python3, ruby
+asdf plugin-install ruby
+asdf plugin-install python
+asdf install ruby 3.0.2
+asdf install python 3.6.12
+asdf plugin install python 2.7.6
 
 #Nvim Plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
