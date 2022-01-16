@@ -1,0 +1,44 @@
+snippet defmo "defmodule"
+defmodule ${1:PapaPal.} do
+
+end
+
+endsnippet
+
+snippet def "def func"
+def $1() do
+
+end
+
+endsnippet
+
+snippet defp "def private func"
+defp $1() do
+
+end
+
+endsnippet
+snippet test "def test"
+test "$1" do
+
+end
+
+endsnippet
+
+snippet testo "def test with options"
+test "$1", %{$2} do
+
+end
+
+endsnippet
+
+snippet desc "describe block "
+describe "$1" do
+	setup do
+		$2
+		:ok
+	end
+
+end
+
+endsnippet
