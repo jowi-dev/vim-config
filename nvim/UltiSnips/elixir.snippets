@@ -42,3 +42,31 @@ describe "$1" do
 end
 
 endsnippet
+snippet soft_migr "soft delete migration"
+	use Ecto.Migration
+
+	@disable_ddl_transaction true
+	@disable_migration_lock true
+
+	@schema $1 
+
+	def change do
+		alter table(@schema) do
+			add(:soft_deleted_at, :utc_datetime_usec, [])
+		end
+
+		create index(@schema, [:soft_deleted_at], concurrently: true)
+	end
+endsnippet
+
+snippet soft_field "soft delete field"
+field(:soft_deleted_at, :utc_datetime_usec)
+endsnippet
+
+snippet oban_job "create a oban job"
+use Oban.Worker
+
+@impl Oban.Worker
+def perform(%Oban.Job{args: args}) do
+end
+endsnippet
