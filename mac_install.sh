@@ -38,6 +38,23 @@ asdf install ruby latest
 asdf global ruby latest
 gem install neovim
 
+# Go
+brew install coreutils
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+asdf install golang latest
+asdf global golang latest
+
+# Rust
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust latest
+asdf global rust latest
+
+# Lua  - Does not work on MacOS at the moment
+#asdf plugin-add luaJIT https://github.com/smashedtoatoms/asdf-luaJIT.git
+#asdf install luaJIT latest
+#asdf global luaJIT latest
+
+
 
 
 # Tmux
