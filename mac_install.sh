@@ -25,12 +25,14 @@ asdf global elixir 1.13.4-otp-25
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs 18.4.0
 asdf global nodejs 18.4.0
+npm i -g neovim
 
 # Python
 asdf plugin add python
 asdf install python 3.10.0
 asdf global python 3.10.0
 python -m pip install --user --upgrade pynvim
+sudo pip3 install powerline-status
 
 # Ruby
 asdf plugin add ruby
@@ -73,7 +75,7 @@ git clone git@github.com:ryanoasis/nerd-fonts.git
 rm -rf nerd-fonts/
 
 
-#Apt Installations
+#Brew Installations
 brew install wget
 brew install ctags
 brew install fzf
@@ -83,12 +85,8 @@ brew install bat
 brew install lsd
 brew install starship
 
-#installing bat via apt causes the executable to be named batcat.
-#create a symlink so the system still knows where to find bat
 
 
-sudo pip3 install powerline-status
-npm i -g neovim
 
 
 cp .bash_profile ~/.bash_profile
