@@ -2,60 +2,73 @@
 -- Auto install if not exist
 local fn = vim.fn
 local cmd = vim.cmd
-local install_path = fn.stdpath('data')..'/site/pack/paqs/opt/paq-nvim'
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  cmd('!git clone --depth 1 https://github.com/savq/paq-nvim.git '..install_path)
-end
 
--- Load the plugin manager
-cmd 'packadd paq-nvim'
 
 -- Set the short hand
-local plug = require('paq-nvim').paq
 
--- Make paq manage it self
-plug {'savq/paq-nvim', opt=true}
+-- Package Manager
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
+-- ensure that packer is installed
+vim.cmd('packadd packer.nvim')
+local packer = require'packer'
+local util = require'packer.util'
+packer.init({
+  package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
+})
+--- startup and add configure plugins
+packer.startup(function()
+  local use = use
+
+	  -- My plugins here
+	  -- use 'foo1/bar1.nvim'
+	  -- use 'foo2/bar2.nvim'
+	use 'endel/vim-github-colorscheme'
+	use 'drewtempelmeyer/palenight.vim'
+	use 'preservim/NERDTREE'
+	use 'powerline/powerline-fonts'
+	use 'chrisbra/csv.vim'
+	use 'tpope/vim-fugitive'
+	use 'idanarye/vim-merginal'
+	use 'edkolev/tmuxline.vim'
+	use 'janko-m/vim-test'
+	--use 'dense-analysis/ale'
+	use 'elixir-editors/vim-elixir'
+	use 'ryanoasis/vim-devicons' 
+
+	use 'mhinz/vim-mix-format'
+
+	use 'airblade/vim-gitgutter'
+	use 'plasticboy/vim-markdown'
+
+	-- Nightlys
+	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use 'nvim-treesitter/playground'
+	use "williamboman/nvim-lsp-installer"
+	use 'neovim/nvim-lspconfig'
+	use 'nvim-lua/plenary.nvim'
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+	use 'nvim-telescope/telescope.nvim'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+
+	use { 'hoob3rt/lualine.nvim', requires = {'ryanoasis/vim-devicons', opt = true} }
+
+	use 'SirVer/ultisnips'
+  end
+)
 
 
-plug 'endel/vim-github-colorscheme'
-plug 'drewtempelmeyer/palenight.vim'
-plug 'preservim/NERDTREE'
-plug 'powerline/powerline-fonts'
-plug 'chrisbra/csv.vim'
-plug 'tpope/vim-fugitive'
-plug 'idanarye/vim-merginal'
-plug 'edkolev/tmuxline.vim'
-plug 'janko-m/vim-test'
---plug 'dense-analysis/ale'
-plug 'elixir-editors/vim-elixir'
-plug 'ryanoasis/vim-devicons' 
 
-plug 'mhinz/vim-mix-format'
-
-plug 'airblade/vim-gitgutter'
-plug 'plasticboy/vim-markdown'
-
--- Nightlys
-plug {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-plug 'nvim-treesitter/playground'
-plug "williamboman/nvim-lsp-installer"
-plug 'neovim/nvim-lspconfig'
-plug 'nvim-lua/plenary.nvim'
-plug 'jose-elias-alvarez/null-ls.nvim'
-plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-plug 'nvim-telescope/telescope.nvim'
-plug 'hrsh7th/cmp-nvim-lsp'
-plug 'hrsh7th/cmp-buffer'
-plug 'hrsh7th/cmp-path'
-plug 'hrsh7th/cmp-cmdline'
-plug 'hrsh7th/nvim-cmp'
-
-plug { 'hoob3rt/lualine.nvim', requires = {'ryanoasis/vim-devicons', opt = true} }
-
-plug 'SirVer/ultisnips'
--- plug 'L3MON4D3/LuaSnip'
- --plug 'saadparwaiz1/cmp_luasnip'
 
 require('lualine').setup({theme= 'horizon'})
 --require('lualine').setup({theme= 'onelight'})
