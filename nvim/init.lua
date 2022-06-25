@@ -2,6 +2,7 @@
 -- Auto install if not exist
 local fn = vim.fn
 local cmd = vim.cmd
+HOME = os.getenv("HOME")
 
 
 
@@ -272,7 +273,7 @@ require('telescope').setup{
     },
 
     -- The directory in which to install all servers.
-    install_root_dir = "~/lsp_servers",
+    install_root_dir = HOME .. '/lsp_servers/',
 
     pip = {
         -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
