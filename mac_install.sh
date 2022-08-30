@@ -3,6 +3,10 @@ chsh -s /bin/bash
 #This config requires node, python2, python3, ruby
 brew update
 brew install asdf
+brew install autoconf
+brew install openssl@1.1
+brew install wxwidgets
+brew install libxslt fop
 echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
 echo -e "\n. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.bash_profile
 
@@ -13,6 +17,7 @@ asdf global neovim 0.7.0
 
 #Erlang
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
 asdf install erlang 25.0.2
 asdf global erlang 25.0.2
 
