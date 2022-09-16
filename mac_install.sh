@@ -9,6 +9,10 @@ echo -e "\n. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.zshrc
 
 #Kitty
 brew install --cask kitty
+brew install autoconf
+brew install openssl@1.1
+brew install wxwidgets
+brew install libxslt fop
 
 # Neovim
 asdf plugin add neovim
@@ -17,6 +21,7 @@ asdf global neovim 0.7.0
 
 #Erlang
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
 asdf install erlang 25.0.2
 asdf global erlang 25.0.2
 
