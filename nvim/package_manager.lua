@@ -29,7 +29,7 @@ packer.startup(function()
 	use 'ryanoasis/vim-devicons' 
 	use 'mhinz/vim-mix-format'
 	use 'airblade/vim-gitgutter'
-	use 'plasticboy/vim-markdown'
+	--use 'plasticboy/vim-markdown' -- Haven't configured or enjoyed this
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use 'nvim-treesitter/playground'
 	use "williamboman/nvim-lsp-installer"

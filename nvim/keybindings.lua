@@ -15,6 +15,8 @@ map('n',  '<leader>gr', ':GitGutterRevertHunk<CR>',{noremap=true})
 map('n',  '<leader>gd', ':Gvdiffsplit!<CR>',{noremap=true})
 map('n',  '<leader>gq', ':diffget //2<CR>',{noremap=true})
 map('n',  '<leader>gp', ':diffget //3<CR>',{noremap=true})
+map('n',  '<leader>gm', ':Merginal<CR>',{noremap=true})
+map('n',  '<leader>gg', ':Git<CR>',{noremap=true})
 
 -- Search and  FileNavigation Related keybinds
 map('n',  '<C-p>',      ':Telescope find_files<CR>',{noremap=true})
