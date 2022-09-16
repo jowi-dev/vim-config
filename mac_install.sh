@@ -1,10 +1,14 @@
 #run this, comment out after the shell is swapped to bash
-chsh -s /bin/bash
 #This config requires node, python2, python3, ruby
+# Install Homebrew - this currently doesn't work as intended
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update
 brew install asdf
-echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
-echo -e "\n. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.bash_profile
+echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.zshrc
+echo -e "\n. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" >> ~/.zshrc
+
+#Kitty
+brew install --cask kitty
 
 # Neovim
 asdf plugin add neovim
@@ -89,5 +93,5 @@ brew install starship
 
 
 
-cp .bash_profile ~/.bash_profile
+cp .zshrc ~/.zshrc
 cp .starship.toml ~/.config/starship.toml
