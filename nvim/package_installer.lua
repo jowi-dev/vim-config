@@ -16,7 +16,10 @@ packer.init({
 --- startup and add configure plugins
 packer.startup(function()
   local use = use
+  use 'github/copilot.vim'
+--  use 'ludovicchabant/vim-gutentags'
 	use 'endel/vim-github-colorscheme'
+  use 'wbthomason/packer.nvim'
 	use 'drewtempelmeyer/palenight.vim'
 	use 'preservim/NERDTREE'
 	use 'powerline/powerline-fonts'

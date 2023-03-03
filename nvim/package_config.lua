@@ -1,6 +1,7 @@
 -- These configs are copy/pasted with full defaults to maximize 
 -- configurability
 ----------------------------------------------------------------------
+require'package_configs/lualine'
 require'package_configs/telescope'
 require'package_configs/cmp'
 require'package_configs/nvim_lsp_installer'

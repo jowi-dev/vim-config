@@ -4,12 +4,13 @@ local cmd = vim.cmd
 cmd('syntax on')
 
 -- Neovim Theme
-cmd('colorscheme github')
---cmd('colorscheme palenight')
+--cmd('colorscheme github')
+cmd('colorscheme palenight')
 --cmd('colorscheme horizon')
 
+--MOVED TO package_configs/lualine.lua
 --LuaLine 
-require('lualine').setup({theme= 'horizon'})
+--require('lualine').setup({theme= 'horizon'})
 --require('lualine').setup({theme= 'onelight'})
 
 -- TmuxLine Theme
@@ -24,6 +25,8 @@ vim.opt.encoding='utf-8'
 vim.opt.number=true
 vim.g.LANG=en_us
 
+
+vim.opt.relativenumber=false
 
 -- Tab and Spacing
 vim.opt.tabstop=2
